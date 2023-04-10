@@ -1,0 +1,30 @@
+
+
+version: '3'
+services:
+  app:
+    container_name: mongo-yolomer
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+    depends_on:
+      - mongo
+    environment:
+      PORT: 3000
+      DATABASE_URL: 'mongodb+srv://wnjenga:rlkQEJrPmN7aCPNx@cluster0.exzgxhs.mongodb.net/?retryWrites=true&w=majority/'
+  mongo:
+    container_name: mongo:latest
+    image: mongo
+    environment:
+      MONGODB_INITDB_ROOT_USERNAME: username
+      MONGODB_INITDB_ROOT_PASSWORD: password
+
+    volumes:
+      - test-vol:/data/db
+
+volumes:
+  test-vol:
