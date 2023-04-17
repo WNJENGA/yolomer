@@ -1,7 +1,7 @@
 version: '3'
 services:
   frontend:
-    image: wnjenga/yolo-client:1.0.0
+    image: yolo-client:1.0.0
     ports:
       - 3000:3000
     stdin_open: true # Keep the terminal running
@@ -11,11 +11,11 @@ services:
       yolo-test-network:
         ipv4_address: 172.60.0.2
   backend:
-    image: wnjenga/yolo-backend:1.0.0
+    image: yolo-backend:1.0.0
     ports:
       - 5000:5000
     environment:
-      MONGODB_URI: 'mongodb://group1:group1@172.60.0.1:27017'
+      MONGODB_URI: 'mongodb+srv://wnjenga:cwo1aYOmp7dr94Ky@cluster0.exzgxhs.mongodb.net/test'
     depends_on:
       - database
     networks:
@@ -24,8 +24,8 @@ services:
   database:
     image: mongo
     environment:
-      MONGO_INITDB_ROOT_USERNAME: group1
-      MONGO_INITDB_ROOT_PASSWORD: group1
+      MONGO_INITDB_ROOT_USERNAME: wnjenga
+      MONGO_INITDB_ROOT_PASSWORD: cwo1aYOmp7dr94Ky
     ports:
       - 27017:27017
     networks:
