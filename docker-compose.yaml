@@ -1,7 +1,7 @@
 version: '3'
 services:
   frontend:
-    image: yolo-client:1.0.0
+    image: wnjenga/yolo-client:1.0.0
     ports:
       - 3000:3000
     stdin_open: true # Keep the terminal running
@@ -11,7 +11,7 @@ services:
       yolo-test-network:
         ipv4_address: 172.60.0.2
   backend:
-    image: yolo-backend:1.0.0
+    image: wnjenga/yolo-backend:1.0.0
     ports:
       - 5000:5000
     environment:
