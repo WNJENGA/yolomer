@@ -26,3 +26,7 @@ The explanation.md seeks to expound on my reasoning for the implementation of
  * I added **stdin input** to keep the termainal running 
 
 ## Good practices such as Docker image tag naming standards for ease of identification of images and containers. 
+ * images has been named and tagged correctly for ease of identification. Sample of the 2 images 
+   - wnjenga/yolo-client:1.0.0
+   -  wnjenga/yolo-backend:1.0.0
+  * The same has been successfully pushed to dockerhub 
