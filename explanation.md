@@ -1,6 +1,6 @@
 # Overview
 
-This explanation.md seeks to expound on my reasoning for the implementation of 
+The explanation.md seeks to expound on my reasoning for the implementation of 
 
 ## Choice of the base image
  * The smallest possible base image and in this case alpine- was chosen. 
