@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 FROM node:14-alpine
 
 WORKDIR /app
@@ -14,3 +15,12 @@ COPY . .
 
 EXPOSE 3000
 CMD ["npm", "start"]
+=======
+FROM node:alpine
+WORKDIR /app
+COPY ./package.json /app/package.json
+RUN npm install
+COPY . /app/
+RUN npm i
+CMD ["npm", "run", "start"]
+>>>>>>> f9f350e24593ec4646ae410592fb8bb191fdf244
