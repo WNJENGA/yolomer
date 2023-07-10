@@ -1,26 +1,12 @@
-<<<<<<< HEAD
-FROM node:14-alpine
+FROM node:13.12.0-alpine
 
 WORKDIR /app
 
-# add '/app/node_modules/.bin' to $PATH
-ENV PATH /app/node_modules/.bin:$PATH
-# install application dependencies
-COPY package*.json ./
-RUN npm install
-# RUN npm install react-scripts -g
+COPY package.json .
+COPY package-lock.json .
 
-# copy app files
+RUN npm install
+
 COPY . .
 
-EXPOSE 3000
-CMD ["npm", "start"]
-=======
-FROM node:alpine
-WORKDIR /app
-COPY ./package.json /app/package.json
-RUN npm install
-COPY . /app/
-RUN npm i
-CMD ["npm", "run", "start"]
->>>>>>> f9f350e24593ec4646ae410592fb8bb191fdf244
+CMD [ "npm", "start" ]
