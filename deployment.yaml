@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yolok8s-client-deployment
+spec:
+  selector:
+    matchLabels:
+      app: yolok8s-client
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: yolok8s-client
+    spec:
+      containers:
+        - name: yolok8s-client
+          image: wnjenga/client_container:1.0.0
+          ports:
+            - containerPort: 3000
